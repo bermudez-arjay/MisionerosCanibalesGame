@@ -1,0 +1,130 @@
+:root {
+    --fondo-degradado: linear-gradient(to bottom, #ff00ff 0%, #ff66ff 100%);
+    --color-tierra: #7b7042;
+    --color-agua: rgba(127, 0, 255, 0.3);
+}
+
+body {
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    background: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#ventana-principal {
+    width: 1000px;
+    height: 600px;
+    background: white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#barra-navegacion {
+    height: 40px;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    border-bottom: 1px solid #ccc;
+}
+
+.botones-ventana { display: flex; gap: 5px; }
+.circulo { width: 12px; height: 12px; border-radius: 50%; }
+.rojo { background: #ff5f57; }
+.amarillo { background: #febc2e; }
+.verde { background: #28c840; }
+
+#campo-url {
+    background: white;
+    border: 1px solid #ccc;
+    margin-left: 20px;
+    padding: 2px 10px;
+    width: 300px;
+    font-size: 13px;
+}
+
+#escenario {
+    flex: 1;
+    background: var(--fondo-degradado);
+    position: relative;
+    border: 20px solid #a0a0a0;
+    border-bottom: 0;
+}
+
+.etiqueta {
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    top: 20px;
+}
+#texto-izquierda { left: 80px; }
+#texto-rio { left: 470px; }
+#texto-derecha { right: 80px; }
+
+.tierra {
+    position: absolute;
+    bottom: 0;
+    height: 180px;
+    width: 330px;
+    background: var(--color-tierra);
+}
+#tierra-derecha { right: 0; }
+
+#agua-rio {
+    position: absolute;
+    bottom: 0;
+    left: 330px;
+    width: 340px;
+    height: 100px;
+    background: var(--color-agua);
+}
+
+#bote {
+    position: absolute;
+    bottom: 60px;
+    left: 335px;
+    width: 160px;
+    height: 60px;
+    transition: left 0.8s ease-in-out;
+    cursor: pointer;
+}
+#bote.derecha { left: 505px; }
+
+.personaje {
+    width: 45px;
+    height: 120px;
+    position: absolute;
+    bottom: 180px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+#panel-interfaz {
+    height: 150px;
+    background: #e0e0e0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.marcador {
+    background: #d0d0d0;
+    padding: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    min-width: 150px;
+}
+
+.boton-accion {
+    padding: 10px 15px;
+    margin: 0 5px;
+    font-weight: bold;
+    cursor: pointer;
+    background: white;
+    border: 2px solid #999;
+}

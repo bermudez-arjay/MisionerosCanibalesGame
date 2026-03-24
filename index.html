@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misioneros y Caníbales</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<div id="ventana-principal">
+    <div id="barra-navegacion">
+        <div class="botones-ventana">
+            <div class="circulo rojo"></div>
+            <div class="circulo amarillo"></div>
+            <div class="circulo verde"></div>
+        </div>
+        <div id="campo-url">misioneros-y-canibales.juego/v1</div>
+    </div>
+
+    <div id="escenario">
+        <div class="etiqueta" id="texto-izquierda">Orilla Izquierda</div>
+        <div class="etiqueta" id="texto-rio">Río</div>
+        <div class="etiqueta" id="texto-derecha">Orilla Derecha</div>
+
+        <div class="tierra" id="tierra-izquierda"></div>
+        <div class="tierra" id="tierra-derecha"></div>
+        <div id="agua-rio"></div>
+
+        <div id="bote" onclick="gestionarMovimientoBote()">
+            <svg viewBox="0 0 160 60">
+                <path d="M10,25 C10,50 150,50 150,25 C160,10 160,5 150,5 L140,5 C130,20 30,20 20,5 L10,5 C0,5 0,10 10,25 Z" fill="#8B4513" stroke="#3e1e0a" stroke-width="2"/>
+                <path d="M75,22 L85,22 L80,55 Z" fill="#1b8d6d" stroke="#125c47" stroke-width="1.5"/>
+            </svg>
+        </div>
+
+        <div id="contenedor-personajes"></div>
+    </div>
+
+    <div id="panel-interfaz">
+        <div class="marcador">
+            <div>IZQUIERDA</div>
+            <div>Misioneros: <span id="misioneros-izq">3</span></div>
+            <div>Caníbales: <span id="canibales-izq">3</span></div>
+        </div>
+
+        <div class="controles">
+            <button class="boton-accion" onclick="subirPasajero()">SUBIR</button>
+            <button class="boton-accion" onclick="bajarPasajero()">BAJAR</button>
+            <button class="boton-accion" onclick="gestionarMovimientoBote()">MOVER</button>
+            <button class="boton-accion" onclick="reiniciar()">REINICIAR</button>
+        </div>
+
+        <div class="marcador">
+            <div>DERECHA</div>
+            <div>Misioneros: <span id="misioneros-der">0</span></div>
+            <div>Caníbales: <span id="canibales-der">0</span></div>
+        </div>
+    </div>
+</div>
+
+<script src="logica.js"></script>
+</body>
+</html>
